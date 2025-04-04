@@ -1,0 +1,65 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "title image info";
+        width: 100%;
+        height: 100vh;
+
+        .hero-title {
+            grid-area: "title";
+            background-color: $dark;
+            position: relative;
+            h1 {
+                color: $light;
+                text-transform: uppercase;
+                position: relative;
+                left: 13.5rem;
+                top: 5rem;
+            } 
+        }
+
+        .hero-image {
+            grid-area: "image";
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: fill;
+            }
+        }
+        .hero-info {
+            color: $medium;
+            grid-area: "info";
+            position: relative;
+                right: 4rem;
+                top: 9rem;
+
+            .hero-description {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+            grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            }
+
+            .hero-title {
+            font-size: 2.5rem;
+            }
+        }
+    }
+}
